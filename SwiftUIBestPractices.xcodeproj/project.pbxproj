@@ -23,6 +23,7 @@
 		8E0C32C724FFA29E00A80B34 /* NewTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C32C624FFA29E00A80B34 /* NewTodoViewModel.swift */; };
 		8E0C32C924FFA53900A80B34 /* NewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C32C824FFA53900A80B34 /* NewTodoView.swift */; };
 		8E0C32CB24FFAA5400A80B34 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C32CA24FFAA5400A80B34 /* KeyboardResponder.swift */; };
+		8E0C32CD24FFB13C00A80B34 /* TodoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C32CC24FFB13C00A80B34 /* TodoRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		8E0C32C624FFA29E00A80B34 /* NewTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoViewModel.swift; sourceTree = "<group>"; };
 		8E0C32C824FFA53900A80B34 /* NewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoView.swift; sourceTree = "<group>"; };
 		8E0C32CA24FFAA5400A80B34 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
+		8E0C32CC24FFB13C00A80B34 /* TodoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				8E0C32C124FF87E000A80B34 /* TodoListView.swift */,
+				8E0C32CC24FFB13C00A80B34 /* TodoRow.swift */,
 				8E0C32C824FFA53900A80B34 /* NewTodoView.swift */,
 			);
 			name = View;
@@ -338,6 +341,7 @@
 			files = (
 				8E0C328824FF636E00A80B34 /* AppDelegate.swift in Sources */,
 				8E0C32BE24FF81BB00A80B34 /* DataManager.swift in Sources */,
+				8E0C32CD24FFB13C00A80B34 /* TodoRow.swift in Sources */,
 				8E0C328A24FF636E00A80B34 /* SceneDelegate.swift in Sources */,
 				8E0C32CB24FFAA5400A80B34 /* KeyboardResponder.swift in Sources */,
 				8E0C32C924FFA53900A80B34 /* NewTodoView.swift in Sources */,
