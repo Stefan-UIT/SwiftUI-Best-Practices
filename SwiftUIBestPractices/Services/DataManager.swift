@@ -10,7 +10,7 @@ import Foundation
 
 protocol DataManagerProtocol {
     func fetchTodoList(includingCompleted: Bool) -> [Todo]
-    func add(todo: Todo)
+    func addTodo(title: String)
     func toggleIsCompleted(for todo: Todo)
 }
 
@@ -33,7 +33,8 @@ extension DataManager: DataManagerProtocol {
         includingCompleted ? todos : todos.filter { !$0.isCompleted }
     }
     
-    func add(todo: Todo) {
+    func addTodo(title: String) { // updated method
+        let todo = Todo(title: title)
         todos.insert(todo, at: 0)
     }
     

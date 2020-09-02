@@ -10,6 +10,15 @@ import SwiftUI
 
 struct TodoListView: View {
     @ObservedObject var viewModel = TodoListViewModel()
+    @State private var isShowingAddNew = false
+    
+    private var addNewButton: some View {
+        Button(action: {
+            self.isShowingAddNew.toggle()
+        }) {
+            Image(systemName: "plus")
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -17,6 +26,13 @@ struct TodoListView: View {
                 Text(todo.title)
             }
             .navigationBarTitle(Text("Todo List"))
+            .navigationBarItems(trailing: addNewButton)
+        }
+        .sheet(isPresented: $isShowingAddNew, onDismiss: {
+            self.viewModel.fetchTodos()
+            
+        }) {
+            NewTodoView(viewModel: NewTodoViewModel())
         }
         .onAppear {
             self.viewModel.fetchTodos()
