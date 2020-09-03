@@ -10,13 +10,39 @@ import SwiftUI
 
 struct TodoListView: View {
     @ObservedObject var viewModel = TodoListViewModel()
+    @State private var isShowingAddNew = false
+    
+    private var addNewButton: some View {
+        Button(action: {
+            self.isShowingAddNew.toggle()
+        }) {
+            Image(systemName: "plus")
+        }
+    }
+    
+    private var showCompletedButton: some View { // 1
+        Button(action: {
+            self.viewModel.showCompleted.toggle()
+        }) {
+            Image(systemName: self.viewModel.showCompleted ? "checkmark.circle.fill" : "checkmark.circle")
+        }
+    }
     
     var body: some View {
         NavigationView {
             List(viewModel.todos) { todo in
-                Text(todo.title)
+                Button(action: {self.viewModel.toggleIsCompleted(for: todo)}) {
+                    TodoRow(todo: todo)
+                }
             }
             .navigationBarTitle(Text("Todo List"))
+            .navigationBarItems(leading: showCompletedButton, trailing: addNewButton) // 2
+        }
+        .sheet(isPresented: $isShowingAddNew, onDismiss: {
+            self.viewModel.fetchTodos()
+            
+        }) {
+            NewTodoView(viewModel: NewTodoViewModel())
         }
         .onAppear {
             self.viewModel.fetchTodos()
